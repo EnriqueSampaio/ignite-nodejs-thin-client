@@ -408,7 +408,7 @@ export class BinaryTypeBuilder {
         }
     }
 
-    static fromComplexObjectType(complexObjectType: ComplexObjectType, jsObject: object) {
+    static fromComplexObjectType(complexObjectType: ComplexObjectType, jsObject: Object) {
         let result = new BinaryTypeBuilder();
         const typeInfo = BinaryTypeStorage.getByComplexObjectType(complexObjectType);
         if (typeInfo) {

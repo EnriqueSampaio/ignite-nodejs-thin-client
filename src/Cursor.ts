@@ -37,9 +37,9 @@ export abstract class BaseCursor<T> {
 
     protected _buffer: MessageBuffer;
 
-    protected _keyType: object;
+    protected _keyType: Object;
 
-    protected _valueType: object;
+    protected _valueType: Object;
 
     protected _values: T[];
 
@@ -338,7 +338,7 @@ export class SqlFieldsCursor extends BaseCursor<Array<object>> {
      * @ignore
      */
     async _readRow(buffer: MessageBuffer): Promise<Array<object>> {
-        let values: object[] = new Array(this._fieldCount);
+        let values: Object[] = new Array(this._fieldCount);
         let fieldType;
         for (let i = 0; i < this._fieldCount; i++) {
             fieldType = this._fieldTypes && i < this._fieldTypes.length ? this._fieldTypes[i] : null;

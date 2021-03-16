@@ -103,7 +103,7 @@ export class SqlQuery extends Query<CacheEntry> {
 
     protected _timeout: number;
 
-    private _args: object[];
+    private _args: Object[];
 
     /**
      * Public constructor.
@@ -180,7 +180,7 @@ export class SqlQuery extends Query<CacheEntry> {
      *
      * @return {SqlQuery} - the same instance of the SqlQuery.
      */
-    setArgs(...args: object[]): SqlQuery {
+    setArgs(...args: Object[]): SqlQuery {
         this._args = args;
         return this;
     }

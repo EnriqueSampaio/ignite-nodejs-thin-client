@@ -421,7 +421,7 @@ export class QueryField {
     private _scale: number;
     private _communicator: BinaryCommunicator;
     private _buffer: MessageBuffer;
-    private _defaultValue: object;
+    private _defaultValue: Object;
     private _valueType: PRIMITIVE_TYPE | CompositeType;
     private _index: number;
 
@@ -542,7 +542,7 @@ export class QueryField {
      *
      * @return {QueryField} - the same instance of the QueryField.
      */
-    setDefaultValue(defaultValue: object, valueType: PRIMITIVE_TYPE | CompositeType = null) {
+    setDefaultValue(defaultValue: Object, valueType: PRIMITIVE_TYPE | CompositeType = null) {
         this._defaultValue = defaultValue;
         this._valueType = valueType;
         return this;
