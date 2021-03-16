@@ -32,7 +32,7 @@
     "test:auth_example": "node ./spec/ExamplesExecutor.js AuthExample",
     "test:partition_awareness": "APACHE_IGNITE_CLIENT_PARTITION_AWARENESS=true node ./spec/PartitionAwarenessExecutor.js",
     "build": "tsc",
-    "postinstall": "tsc"
+    "postinstall": "tsc --build"
   },
   "devDependencies": {
     "jasmine": "3.6.2",
