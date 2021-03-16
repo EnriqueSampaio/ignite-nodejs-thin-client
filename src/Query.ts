@@ -278,7 +278,7 @@ export class SqlQuery extends Query<CacheEntry> {
     /**
      * @ignore
      */
-    async _getCursor(communicator, payload, keyType = null, valueType = null): Promise<BaseCursor<CacheEntry>> {
+    async _getCursor(communicator, payload, keyType = null, valueType = null): Promise<BaseCursor<any>> {
         const cursor = new Cursor(communicator, BinaryUtils.OPERATION.QUERY_SQL_CURSOR_GET_PAGE, payload, keyType, valueType);
         cursor._readId(payload);
         return cursor;
