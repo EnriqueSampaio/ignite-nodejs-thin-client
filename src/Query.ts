@@ -475,7 +475,7 @@ export class SqlFieldsQuery extends SqlQuery {
      * @ignore
      */
     // @ts-ignore
-    async _getCursor(communicator, payload, keyType = null, valueType = null): Promise<BaseCursor<Array<object>>> {
+    async _getCursor(communicator, payload, keyType = null, valueType = null): Promise<BaseCursor<Array<Object>>> {
         const cursor = new SqlFieldsCursor(communicator, payload);
         await cursor._readFieldNames(payload, this._includeFieldNames);
         return cursor;

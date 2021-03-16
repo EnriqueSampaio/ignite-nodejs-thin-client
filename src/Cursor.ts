@@ -239,7 +239,7 @@ export class Cursor extends BaseCursor<CacheEntry> {
  * @hideconstructor
  * @extends Cursor
  */
-export class SqlFieldsCursor extends BaseCursor<Array<object>> {
+export class SqlFieldsCursor extends BaseCursor<Array<Object>> {
 
     private _fieldCount: number;
 
@@ -258,7 +258,7 @@ export class SqlFieldsCursor extends BaseCursor<Array<object>> {
      * @return {Promise<Array<*>>} - array with values of the fields requested by the query.
      *
      */
-    async getValue(): Promise<Array<object>> {
+    async getValue(): Promise<Array<Object>> {
         return await super.getValue();
     }
 
@@ -274,7 +274,7 @@ export class SqlFieldsCursor extends BaseCursor<Array<object>> {
      *   Every element of the array is an array with values of the fields requested by the query.
      *
      */
-    async getAll(): Promise<Array<object>[]> {
+    async getAll(): Promise<Array<Object>[]> {
         return await super.getAll();
     }
 
@@ -337,7 +337,7 @@ export class SqlFieldsCursor extends BaseCursor<Array<object>> {
     /**
      * @ignore
      */
-    async _readRow(buffer: MessageBuffer): Promise<Array<object>> {
+    async _readRow(buffer: MessageBuffer): Promise<Array<Object>> {
         let values: Object[] = new Array(this._fieldCount);
         let fieldType;
         for (let i = 0; i < this._fieldCount; i++) {
