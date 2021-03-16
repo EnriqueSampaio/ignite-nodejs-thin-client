@@ -494,7 +494,7 @@ export class BinaryObjectField {
 
     private _id: number;
 
-    private _value: Object;
+    private _value: any;
 
     private _type: PRIMITIVE_TYPE | CompositeType;
 

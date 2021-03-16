@@ -103,7 +103,7 @@ export class SqlQuery extends Query<CacheEntry> {
 
     protected _timeout: number;
 
-    private _args: Object[];
+    private _args: any[];
 
     /**
      * Public constructor.
@@ -180,7 +180,7 @@ export class SqlQuery extends Query<CacheEntry> {
      *
      * @return {SqlQuery} - the same instance of the SqlQuery.
      */
-    setArgs(...args: Object[]): SqlQuery {
+    setArgs(...args: any[]): SqlQuery {
         this._args = args;
         return this;
     }
@@ -475,7 +475,7 @@ export class SqlFieldsQuery extends SqlQuery {
      * @ignore
      */
     // @ts-ignore
-    async _getCursor(communicator, payload, keyType = null, valueType = null): Promise<BaseCursor<Array<Object>>> {
+    async _getCursor(communicator, payload, keyType = null, valueType = null): Promise<BaseCursor<Array<any>>> {
         const cursor = new SqlFieldsCursor(communicator, payload);
         await cursor._readFieldNames(payload, this._includeFieldNames);
         return cursor;

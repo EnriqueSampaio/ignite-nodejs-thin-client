@@ -360,7 +360,7 @@ export default class Router {
         return this._getRandomConnection();
     }
 
-    async _determineNodeId(cacheAffinityMap: CacheAffinityMap, key: Object, keyType: PRIMITIVE_TYPE | CompositeType): Promise<number[] | null> {
+    async _determineNodeId(cacheAffinityMap: CacheAffinityMap, key: any, keyType: PRIMITIVE_TYPE | CompositeType): Promise<number[] | null> {
         const partitionMap: Map<number, number[]> = cacheAffinityMap.partitionMapping;
 
         if (partitionMap.size == 0) {

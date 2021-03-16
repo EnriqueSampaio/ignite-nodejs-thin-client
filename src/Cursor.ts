@@ -37,9 +37,9 @@ export abstract class BaseCursor<T> {
 
     protected _buffer: MessageBuffer;
 
-    protected _keyType: Object;
+    protected _keyType: any;
 
-    protected _valueType: Object;
+    protected _valueType: any;
 
     protected _values: T[];
 
@@ -239,7 +239,7 @@ export class Cursor extends BaseCursor<CacheEntry> {
  * @hideconstructor
  * @extends Cursor
  */
-export class SqlFieldsCursor extends BaseCursor<Array<Object>> {
+export class SqlFieldsCursor extends BaseCursor<Array<any>> {
 
     private _fieldCount: number;
 
@@ -258,7 +258,7 @@ export class SqlFieldsCursor extends BaseCursor<Array<Object>> {
      * @return {Promise<Array<*>>} - array with values of the fields requested by the query.
      *
      */
-    async getValue(): Promise<Array<Object>> {
+    async getValue(): Promise<Array<any>> {
         return await super.getValue();
     }
 
@@ -274,7 +274,7 @@ export class SqlFieldsCursor extends BaseCursor<Array<Object>> {
      *   Every element of the array is an array with values of the fields requested by the query.
      *
      */
-    async getAll(): Promise<Array<Object>[]> {
+    async getAll(): Promise<Array<any>[]> {
         return await super.getAll();
     }
 
@@ -337,8 +337,8 @@ export class SqlFieldsCursor extends BaseCursor<Array<Object>> {
     /**
      * @ignore
      */
-    async _readRow(buffer: MessageBuffer): Promise<Array<Object>> {
-        let values: Object[] = new Array(this._fieldCount);
+    async _readRow(buffer: MessageBuffer): Promise<Array<any>> {
+        let values: any[] = new Array(this._fieldCount);
         let fieldType;
         for (let i = 0; i < this._fieldCount; i++) {
             fieldType = this._fieldTypes && i < this._fieldTypes.length ? this._fieldTypes[i] : null;

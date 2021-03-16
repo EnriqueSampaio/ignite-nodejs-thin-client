@@ -441,7 +441,7 @@ export class ObjectArrayType extends CompositeType {
  */
 export class ComplexObjectType extends CompositeType {
 
-    private _template: Object;
+    private _template: any;
 
     private _objectConstructor: Function;
 

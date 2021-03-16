@@ -753,7 +753,7 @@ export class CacheClient {
     /**
      * @ignore
      */
-    _createAffinityHint(key: Object): AffinityHint {
+    _createAffinityHint(key: any): AffinityHint {
         return new AffinityHint(this._cacheId, key, this._keyType);
     }
 }
@@ -763,9 +763,9 @@ export class CacheClient {
  */
 export class CacheEntry {
 
-    private _key: Object;
+    private _key: any;
 
-    private _value: Object;
+    private _value: any;
 
     /**
      * Public constructor.
@@ -775,7 +775,7 @@ export class CacheEntry {
      *
      * @return {CacheEntry} - new CacheEntry instance
      */
-    constructor(key: Object, value: Object) {
+    constructor(key: any, value: any) {
         this._key = key;
         this._value = value;
     }
@@ -802,10 +802,10 @@ export class CacheEntry {
 export class AffinityHint {
 
     readonly cacheId: number;
-    readonly key: Object;
+    readonly key: any;
     readonly keyType: PRIMITIVE_TYPE | CompositeType;
 
-    constructor(cacheId: number, key: Object, keyType: PRIMITIVE_TYPE | CompositeType) {
+    constructor(cacheId: number, key: any, keyType: PRIMITIVE_TYPE | CompositeType) {
         this.cacheId = cacheId;
         this.key = key;
         this.keyType = keyType;
