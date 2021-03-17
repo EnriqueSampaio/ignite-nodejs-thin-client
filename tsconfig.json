@@ -7,10 +7,7 @@
     "sourceMap": true,
     "module": "CommonJS",
     "declaration": true,
-    "declarationMap": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "declarationMap": true
   },
   "exclude": [
     "node_modules"
